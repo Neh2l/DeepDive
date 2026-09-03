@@ -1,39 +1,26 @@
-function ProductCard(props) {
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
+export default function ProductCard({ product }) {
+  const { favorites, toggleFavorite } = useContext(UserContext);
+
+  const isFavorite = favorites.includes(product.id);
+
   return (
     <div className="product-card">
+      <img src={product.image} alt={product.title} />
 
-      <div className="product-image">
-        <img src={props.image} alt={props.title} />
-      </div>
+      <h3>{product.title}</h3>
 
-      <div className="product-content">
+      <p>{product.category}</p>
 
-        <p className="product-category">
-          {props.category}
-        </p>
+      <p>{product.description}</p>
 
-        <h3>{props.title}</h3>
+      <h4>${product.price}</h4>
 
-        <p className="product-description">
-          {props.description}
-        </p>
-
-        <div className="product-bottom">
-
-          <span className="product-price">
-            {props.price}
-          </span>
-
-          <button className="details-button">
-            View Details
-          </button>
-
-        </div>
-
-      </div>
-
+      <button onClick={() => toggleFavorite(product.id)}>
+        {isFavorite ? " Remove Favorite" : " Add Favorite"}
+      </button>
     </div>
   );
 }
-
-export default ProductCard;

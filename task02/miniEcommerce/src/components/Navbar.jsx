@@ -1,20 +1,44 @@
-function Navbar() {
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+
+export default function Navbar() {
+  const { user, setUser, favorites } = useContext(UserContext);
+
+  const linkClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
     <nav className="navbar">
-      <div className="logo">
-        NOVA
-      </div>
+      <h2>Mini Store</h2>
 
       <div className="nav-links">
-        <a href="">Home</a>
-        <a href="">Products</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
-      </div>
+        <NavLink to="/" end className={linkClass}>
+          Home
+        </NavLink>
 
-      <button className="nav-button">Shop Now</button>
+        <NavLink to="/products" className={linkClass}>
+          Products
+        </NavLink>
+
+        {user ? (
+          <>
+            <NavLink to="/wishlist" className={linkClass}>
+              Wishlist {favorites.length > 0 && `(${favorites.length})`}
+            </NavLink>
+
+            <span>Hi, {user.name}</span>
+
+            <button onClick={() => setUser(null)}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <NavLink to="/login" className={linkClass}>
+            Login
+          </NavLink>
+        )}
+      </div>
     </nav>
   );
 }
-
-export default Navbar;
