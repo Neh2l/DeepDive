@@ -7,6 +7,7 @@ const products = [
     description: "Powerful laptop for work and study.",
     image: "/Lab.jpg",
   },
+
   {
     id: 2,
     title: "Headphones",
@@ -15,6 +16,7 @@ const products = [
     description: "Comfortable headphones with clear sound.",
     image: "/headphone.jpg",
   },
+
   {
     id: 3,
     title: "Smart Watch",
@@ -23,6 +25,7 @@ const products = [
     description: "Track your fitness and notifications.",
     image: "/watch.jpg",
   },
+
   {
     id: 4,
     title: "Camera",
@@ -31,6 +34,7 @@ const products = [
     description: "Capture your favorite moments.",
     image: "/camera.jpg",
   },
+
   {
     id: 5,
     title: "Keyboard",
@@ -39,6 +43,7 @@ const products = [
     description: "Mechanical keyboard for comfortable typing.",
     image: "/Keyboard.jpg",
   },
+
   {
     id: 6,
     title: "Smartphone",

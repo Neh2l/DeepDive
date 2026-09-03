@@ -1,28 +1,52 @@
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import Layout from "./layout/Layout";
 
 import Home from "./pages/home";
 import Products from "./pages/products";
-import Wishlist from "./pages/wishlist";
+import ProductDetails from "./pages/productDetials";
 import Login from "./pages/login";
+import Wishlist from "./pages/wishlist";
 
 export default function App() {
   return (
-    <>
-      <Navbar />
+    <Routes>
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={<Layout />}
+      >
 
-          <Route path="/products" element={<Products />} />
+        <Route
+          index
+          element={<Home />}
+        />
 
-          <Route path="/wishlist" element={<Wishlist />} />
+        <Route
+          path="products"
+          element={<Products />}
+        />
 
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </main>
-    </>
+        <Route
+          path="products/:id"
+          element={<ProductDetails />}
+        />
+
+        <Route
+          path="login"
+          element={<Login />}
+        />
+
+        <Route
+          path="wishlist"
+          element={<Wishlist />}
+        />
+
+      </Route>
+
+    </Routes>
   );
 }

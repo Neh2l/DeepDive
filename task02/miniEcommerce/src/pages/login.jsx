@@ -1,10 +1,13 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+
+import {
+  FaUser,
+  FaEnvelope,
+  FaLock,
+} from "react-icons/fa";
 
 export default function Login() {
-  const { setUser } = useContext(UserContext);
-
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -19,47 +22,78 @@ export default function Login() {
     }
 
     if (password.length < 6) {
-      alert("Password must be at least 6 characters.");
+      alert(
+        "Password must be at least 6 characters."
+      );
       return;
     }
 
-    const name = email.split("@")[0];
+    const user = {
+      name: email.split("@")[0],
+      email: email,
+    };
 
-    setUser({
-      name,
-      email,
-    });
+    localStorage.setItem(
+      "user",
+      JSON.stringify(user)
+    );
 
     navigate("/");
   }
 
   return (
     <div className="login-page">
-      <h1>Login</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>Email</label>
+      <div className="login-card">
 
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-        />
+        <div className="login-icon">
+          <FaUser />
+        </div>
 
-        <label>Password</label>
+        <h1>Welcome Back</h1>
 
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-        />
+        <p>
+          Login to your Mini Store account.
+        </p>
 
-        <button type="submit">
-          Login
-        </button>
-      </form>
+        <form onSubmit={handleSubmit}>
+
+          <label>
+            <FaEnvelope />
+            Email
+          </label>
+
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) =>
+              setEmail(e.target.value)
+            }
+          />
+
+          <label>
+            <FaLock />
+            Password
+          </label>
+
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) =>
+              setPassword(e.target.value)
+            }
+          />
+
+          <button type="submit">
+            Login
+          </button>
+
+        </form>
+
+      </div>
+
     </div>
   );
 }

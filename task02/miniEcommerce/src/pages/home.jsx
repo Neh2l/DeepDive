@@ -1,17 +1,27 @@
-import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
-    <div className="home">
-      <h1>Welcome to Mini Store </h1>
+    <>
+      <Hero />
 
-      <p>
-        Find simple and useful products at affordable prices.
-      </p>
+      <section className="home-summary">
 
-      <Link to="/products">
-        <button>Shop Now</button>
-      </Link>
-    </div>
+        <span>WHY MINI STORE?</span>
+
+        <h2>
+          Everything you need,
+          <br />
+          in one simple place.
+        </h2>
+
+        <p>
+          Mini Store gives you a simple way
+          to explore products and manage
+          your product collection.
+        </p>
+
+      </section>
+    </>
   );
 }
