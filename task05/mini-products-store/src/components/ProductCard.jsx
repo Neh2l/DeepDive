@@ -15,7 +15,7 @@ function ProductCard({ product }) {
         />
       </div>
 
-      <p className="mb-2 text-sm text-blue-500">
+      <p className="mb-2 text-sm text-indigo-500">
         {product.category}
       </p>
 
@@ -29,7 +29,7 @@ function ProductCard({ product }) {
 
       <button
         onClick={() => dispatch(addToCart(product))}
-        className="mt-auto rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700"
+        className="mt-auto rounded-lg bg-indigo-600 px-4 py-3 font-medium text-white transition hover:bg-indigo-700"
       >
         Add to Cart
       </button>

@@ -12,11 +12,11 @@ function Navbar() {
   );
 
   return (
-    <nav className="bg-slate-900 px-6 py-5 text-white shadow-md">
+    <nav className="bg-white px-6 py-5 text-black shadow-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         
         <h2 className="text-2xl font-bold">
-          Mini<span className="text-blue-400">Store</span>
+          Mini<span className="text-indigo-400">Store</span>
         </h2>
 
         <div className="flex items-center gap-6">
@@ -25,8 +25,8 @@ function Navbar() {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-400 font-semibold"
-                : "text-white hover:text-blue-400"
+                ? "text-ind-400 font-semibold"
+                : "text-white hover:text-ind-400"
             }
           >
             Home
@@ -36,8 +36,8 @@ function Navbar() {
             to="/cart"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-400 font-semibold"
-                : "text-white hover:text-blue-400"
+                ? "text-indigo-400 font-semibold"
+                : "text-gray-700 hover:text-indigo-400"
             }
           >
             Cart ({totalItems})

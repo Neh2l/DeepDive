@@ -47,7 +47,7 @@ function ProductForm() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-500"
         />
 
         <input
@@ -56,7 +56,7 @@ function ProductForm() {
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           required
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-500"
         />
 
         <input
@@ -65,7 +65,7 @@ function ProductForm() {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-500"
         />
 
         <input
@@ -74,12 +74,12 @@ function ProductForm() {
           value={image}
           onChange={(e) => setImage(e.target.value)}
           required
-          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+          className="rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-indigo-500"
         />
 
         <button
           type="submit"
-          className="rounded-lg bg-slate-900 px-6 py-3 font-semibold text-white transition hover:bg-slate-700 md:col-span-2"
+          className="rounded-lg bg-indigo-900 px-6 py-3 font-semibold text-white transition hover:bg-slate-700 md:col-span-2"
         >
           Add Product
         </button>

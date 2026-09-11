@@ -46,7 +46,7 @@ function Cart() {
         />
       ))}
 
-      <div className="mt-8 flex items-center justify-between rounded-xl bg-slate-900 p-6 text-white">
+      <div className="mt-8 flex items-center justify-between rounded-xl bg-white-900 p-6 text-gray-800 shadow-sm">
 
         <span className="text-lg">
           Total

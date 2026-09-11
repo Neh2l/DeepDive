@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="mt-16 bg-slate-900 py-6 text-center text-gray-300">
+    <footer className="mt-16 bg-white py-6 text-center text-gray-700">
       © 2026 Mini Store. All rights reserved.
     </footer>
   );
